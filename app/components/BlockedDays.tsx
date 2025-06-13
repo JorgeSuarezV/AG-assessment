@@ -1,6 +1,6 @@
-import { Form, useLoaderData, useSubmit } from "@remix-run/react";
+import { useLoaderData, useSubmit } from "@remix-run/react";
 import { BlockStack, Card, Checkbox, IndexTable, Text, Box } from "@shopify/polaris";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { loader } from "app/routes/app._index";
 
 export default function BlockedDays() {

@@ -1,6 +1,4 @@
-import { gql } from "graphql-request";
-
-export default gql`query {
+export default `query {
   shop {
     id
     datesField: metafield(namespace: "dates", key: "dates") {

@@ -15,6 +15,7 @@ database.sqlite
 .env.*
 
 .vscode/
+node_modules/
 
 
 

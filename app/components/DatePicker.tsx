@@ -1,12 +1,9 @@
 import {
     Modal,
     DatePicker as PolarisDatePicker,
-    Button,
     Checkbox,
     Box,
-    BlockStack,
-    InlineStack,
-    Text
+    BlockStack
 } from "@shopify/polaris";
 import { useEffect, useState } from "react";
 

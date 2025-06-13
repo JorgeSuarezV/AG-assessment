@@ -1,5 +1,4 @@
-import { Modal, TextContainer, Button, ButtonGroup, Box, Text, BlockStack } from "@shopify/polaris";
-import { useState } from "react";
+import { Modal, Button, Box, Text, BlockStack } from "@shopify/polaris";
 
 interface ConfirmationModalProps {
     isOpen: boolean;

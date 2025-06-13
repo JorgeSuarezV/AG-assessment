@@ -23,10 +23,7 @@ const shopify = shopifyApp({
   },
   hooks: {
     afterAuth: async ({ session, admin }) => {
-      console.log("App installed, creating metafield definitions...");
-      
       try {
-        // Create the delivery_date metafield definition for orders
         const deliveryDateResponse = await admin.graphql(CreateMetafieldDefinition, {
           variables: {
             definition: {
@@ -48,7 +45,6 @@ const shopify = shopifyApp({
           console.log("Delivery date metafield definition created successfully");
         }
 
-        // Create the blockedDays metafield definition for shops
         const blockedDaysResponse = await admin.graphql(CreateMetafieldDefinition, {
           variables: {
             definition: {
@@ -61,7 +57,6 @@ const shopify = shopifyApp({
             }
           }
         });
-        console.error("blockedDaysResponse", blockedDaysResponse);
         
         const blockedDaysResult = await blockedDaysResponse.json();
         
@@ -71,7 +66,6 @@ const shopify = shopifyApp({
           console.log("Blocked days metafield definition created successfully");
         }
 
-        // Create the dates metafield definition for shops
         const datesResponse = await admin.graphql(CreateMetafieldDefinition, {
           variables: {
             definition: {

@@ -1,15 +1,10 @@
-import {
-    Layout,
-    Page,
-    BlockStack,
-} from "@shopify/polaris";
+import { Layout, Page, BlockStack } from "@shopify/polaris";
+import { ActionFunctionArgs, LoaderFunctionArgs, json } from "@remix-run/node";
 import DatesList from "app/components/dates_list";
 import BlockedDays from "app/components/BlockedDays";
-import { ActionFunctionArgs, json, LoaderFunctionArgs } from "@remix-run/node";
 import CreateAppDataMetafield from "app/graphql/mutations/CreateAppDataMetafield";
 import { authenticate } from "app/shopify.server";
 import shopMetafields from "app/graphql/queries/shopMetafields";
-
 
 export const loader = async ({ request }: LoaderFunctionArgs) => {
     const { admin } = await authenticate.admin(request);
@@ -32,10 +27,9 @@ export const action = async ({ request }: ActionFunctionArgs) => {
     const { authenticate } = await import("app/shopify.server");
     const { admin } = await authenticate.admin(request);
 
-
     if (intent === "updateBlockedDays") {
         const blockedDays = formData.get("blockedDays");
-        const response = await admin.graphql(CreateAppDataMetafield, {
+        await admin.graphql(CreateAppDataMetafield, {
             variables: {
                 metafieldsSetInput: {
                     namespace: "blockedDays",
@@ -50,8 +44,7 @@ export const action = async ({ request }: ActionFunctionArgs) => {
 
     if (intent === "updateDates") {
         const dates = formData.get("dates");
-
-        const response = await admin.graphql(CreateAppDataMetafield, {
+        await admin.graphql(CreateAppDataMetafield, {
             variables: {
                 metafieldsSetInput: {
                     namespace: "dates",

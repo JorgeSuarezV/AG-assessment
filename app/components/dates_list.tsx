@@ -1,6 +1,6 @@
 import { BlockStack, InlineGrid, Card, IndexTable, ButtonGroup, Button, Text, Box } from "@shopify/polaris";
 import { EditIcon, DeleteIcon } from "@shopify/polaris-icons";
-import { useEffect, useState, useMemo } from "react";
+import { useState, useMemo } from "react";
 import DatePicker from "./DatePicker";
 import ConfirmationModal from "./ConfirmationModal";
 import { useLoaderData, useSubmit } from "@remix-run/react";
