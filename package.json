@@ -17,7 +17,7 @@
     "prisma": "prisma",
     "graphql-codegen": "graphql-codegen",
     "vite": "vite",
-    "postinstall": "npx prisma generate"
+    // "postinstall": "npx prisma generate"
   },
   "type": "module",
   "engines": {
